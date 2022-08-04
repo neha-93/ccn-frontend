@@ -67,6 +67,7 @@ const MyPaymentForm = () => {
   return (
   <div>
 
+  {!stripePay && <div>
   <FormControl>
     <FormLabel id="demo-controlled-radio-buttons-group">Select Card Type</FormLabel>
     <RadioGroup
@@ -112,8 +113,9 @@ const MyPaymentForm = () => {
         <a onClick={(event, value) => setRazorPay(true) && console.log(razorPay)} href="https://rzp.io/l/ePVVGrS2e"><Button size="small">Pay through RazorPay gateway</Button></a>
       </CardActions>
     </Card>
+    </div>}
   
-  {stripePay && <div>
+  {stripePay && <div className="stripe-checkout">
   <h1>Enter amount to be paid.</h1>
   <CurrencyTextField
 		label="Amount"
